@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rJr0Iw/T3wVDqb0Qd6Fzg8JulZPuiM77kGl8tSloJGuYO9ixBrehlQdma3NqLPinYSmP/9q0CaMx4G8oNEbJvQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}

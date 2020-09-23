@@ -1,0 +1,15 @@
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\bin\Debug\netstandard2.0\gridApp.deps.json
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\bin\Debug\netstandard2.0\gridApp.dll
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\bin\Debug\netstandard2.0\ref\gridApp.dll
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\bin\Debug\netstandard2.0\gridApp.pdb
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\gridApp.csprojAssemblyReference.cache
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\gridApp.AssemblyInfoInputs.cache
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\gridApp.AssemblyInfo.cs
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\gridApp.csproj.CoreCompileInputs.cache
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\gridApp.dll
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\ref\gridApp.dll
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\gridApp.pdb
+C:\Users\opilane\source\repos\gridApp\gridApp\gridApp\obj\Debug\netstandard2.0\TicTacToe.xaml.g.cs
