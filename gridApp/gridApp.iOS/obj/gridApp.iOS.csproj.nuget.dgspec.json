@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj": {}
+    "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj": {
+    "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj",
         "projectName": "gridApp.iOS",
-        "projectPath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj",
+        "projectPath": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp.iOS\\gridApp.iOS.csproj",
         "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.iOS\\obj\\",
+        "outputPath": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp\\gridApp.csproj": {
-                "projectPath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp\\gridApp.csproj"
+              "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp\\gridApp.csproj": {
+                "projectPath": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp\\gridApp.csproj"
               }
             }
           }
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp\\gridApp.csproj": {
+    "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp\\gridApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp\\gridApp.csproj",
+        "projectUniqueName": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp\\gridApp.csproj",
         "projectName": "gridApp",
-        "projectPath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp\\gridApp.csproj",
+        "projectPath": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp\\gridApp.csproj",
         "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp\\obj\\",
+        "outputPath": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

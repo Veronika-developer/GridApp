@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7ZUB7ICRWHxx6Us4Yh9M7Ut9rM4vbbtRQqoBr1DeemnuJdGVAYBKG7VVaMY6SboZh14T+RL6Dx4TbdhN8Tz1+w==",
+  "dgSpecHash": "3CxtwxINYcIkuVUDDlohPC8wCkT9rsONJWDG2S76JHfeJtHWkvZHmPH0qX2NKY9clGpW2xWfBGilaCxF6mEC8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\gridApp\\gridApp\\gridApp.Android\\gridApp.Android.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\Desktop\\GridApp\\gridApp\\gridApp.Android\\gridApp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",

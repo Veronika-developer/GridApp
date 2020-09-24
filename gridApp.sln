@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridApp.Android", "gridApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridApp.iOS", "gridApp\gridApp.iOS\gridApp.iOS.csproj", "{3514354D-CFDF-4A52-94AC-935B2DA3D173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gridApp", "gridApp\gridApp\gridApp.csproj", "{2A0DC547-C9CF-444D-A93F-F1CE6C0BB838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gridApp", "gridApp\gridApp\gridApp.csproj", "{2A0DC547-C9CF-444D-A93F-F1CE6C0BB838}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{2386BB56-9F44-4127-A235-78F2A78E6641}"
+	ProjectSection(SolutionItems) = preProject
+		..\nolik.png = ..\nolik.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
