@@ -12,16 +12,20 @@ namespace gridApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TicTacToe : ContentPage
     {
+        public bool First = false;
+        Label WhoFirst;
         BoxView box;
-        Button newGame, XO;
         public TicTacToe()
         {
+            FirstPlayer();
             NewGame();
+            WHO();
         }
 
         void NewGame()
         {
             Grid grid = new Grid();
+            //string [] boxes = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
             for (int i = 0; i < 3; i++)
             {
@@ -33,7 +37,7 @@ namespace gridApp
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    box = new BoxView { Color = Color.FromRgb(200, 100, 50) };
+                    box = new BoxView { Color = Color.FromRgb(150, 150, 150) };
                     grid.Children.Add(box, i, j);
                     var tap = new TapGestureRecognizer();
                     tap.Tapped += Tap_Tapped;
@@ -55,7 +59,7 @@ namespace gridApp
             };
             AbsoluteLayout.SetLayoutBounds(newGame, new Rectangle(0.9, 0.02, 150, 50));
             AbsoluteLayout.SetLayoutFlags(newGame, AbsoluteLayoutFlags.PositionProportional);
-            newGame.Clicked += NewGame_Clicked;
+            newGame.Clicked += new EventHandler(NewGame_Clicked);
             absolute.Children.Add(newGame);
 
             Button XO = new Button
@@ -69,42 +73,96 @@ namespace gridApp
             XO.Clicked += XO_Clicked;
             absolute.Children.Add(XO);
 
+            WhoFirst = new Label
+            {
+                TextColor = Color.Black,
+                Text = "..."
+            };
+            AbsoluteLayout.SetLayoutBounds(WhoFirst, new Rectangle(0.7, 1.3, 150, 50));
+            AbsoluteLayout.SetLayoutFlags(WhoFirst, AbsoluteLayoutFlags.PositionProportional);
+            absolute.Children.Add(WhoFirst);
+
             StackLayout stack = new StackLayout()
             {
                 Children = { grid, absolute }
             };
             Content = stack;
         }
+        public async void FirstPlayer()
+        {
+            string FirstPlayer = await DisplayPromptAsync("Who is first?", "Zero - 1, cross - 2", 
+                initialValue:"1", 
+                maxLength:1, 
+                keyboard:Keyboard.Numeric);
+            if(FirstPlayer == "1")
+            {
+                First = true;
+            }
+            else if (FirstPlayer == "2")
+            {
+                First = true;
+            }
+        }
         Random rnd = new Random();
-        private void XO_Clicked(object sender, EventArgs e, ref int whoFirst)
+        private bool First_playerRND()
         {
-            if (whoFirst == 1)
+            int player = rnd.Next(0, 2);
+            if(player == 1)
             {
-                zero();
+                First = true;
             }
-            else if (whoFirst == 2)
+            else if (player == 2)
             {
-                cross();
+                First = false;
             }
+            return First;
         }
-        async void zero()
+        private void XO_Clicked(object sender, EventArgs e)
         {
-            await DisplayAlert("Who is first?", "Zero goes first.", "ОK");
-        }
-        async void cross()
-        {
-            await DisplayAlert("Who is first?", "The cross goes first.", "ОK");
+            First_playerRND();
+            NewGame();
+            WHO();
         }
         private void NewGame_Clicked(object sender, EventArgs e)
         {
             NewGame();
+            WHO();
         }
         private void Tap_Tapped(object sender, EventArgs e)
         {
             BoxView box = sender as BoxView;
-            box.Color = Color.Blue;
-            int whoFirst = rnd.Next(1, 3);
-            XO_Clicked(ref whoFirst);
+            
+            if(box.Color == Color.FromRgb(150, 150, 150) && First)
+            {
+                box.Color = Color.FromRgb(128, 57, 30);
+                First = false;
+            }
+            else if (box.Color == Color.FromRgb(150, 150, 150) && !First)
+            {
+                box.Color = Color.FromRgb(224, 123, 57);
+                First = true;
+            }
+            else
+            {
+                DisplayAlert("Warning!", "The enemy has already cut this field.", "OK");
+            }
+            WHO();
+        }
+        private void WHO()
+        {
+            if(First == true)
+            {
+                WhoFirst.Text = "Zero move";
+            }
+            else if (First == false)
+            {
+                WhoFirst.Text = "Cross move";
+            }
+        }
+
+        private void Winner()
+        {
+
         }
     }
 }
