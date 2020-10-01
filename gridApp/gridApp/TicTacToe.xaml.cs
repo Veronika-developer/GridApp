@@ -12,7 +12,8 @@ namespace gridApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TicTacToe : ContentPage
     {
-        public bool First = false;
+        public bool First;
+        int[,] map = new int[3, 3];
         Label WhoFirst;
         BoxView box;
         public TicTacToe()
@@ -38,6 +39,7 @@ namespace gridApp
                 for (int j = 0; j < 3; j++)
                 {
                     box = new BoxView { Color = Color.FromRgb(150, 150, 150) };
+                    map[i, j] = 170173;
                     grid.Children.Add(box, i, j);
                     var tap = new TapGestureRecognizer();
                     tap.Tapped += Tap_Tapped;
@@ -90,24 +92,24 @@ namespace gridApp
         }
         public async void FirstPlayer()
         {
-            string FirstPlayer = await DisplayPromptAsync("Who is first?", "Zero - 1, cross - 2", 
-                initialValue:"1", 
-                maxLength:1, 
-                keyboard:Keyboard.Numeric);
-            if(FirstPlayer == "1")
+            string FirstPlayer = await DisplayPromptAsync("Who is first?", "Zero - 1, cross - 2",
+                initialValue: "1",
+                maxLength: 1,
+                keyboard: Keyboard.Numeric);
+            if (FirstPlayer == "1")
             {
                 First = true;
             }
             else if (FirstPlayer == "2")
             {
-                First = true;
+                First = false;
             }
         }
         Random rnd = new Random();
         private bool First_playerRND()
         {
             int player = rnd.Next(0, 2);
-            if(player == 1)
+            if (player == 1)
             {
                 First = true;
             }
@@ -131,26 +133,29 @@ namespace gridApp
         private void Tap_Tapped(object sender, EventArgs e)
         {
             BoxView box = sender as BoxView;
-            
-            if(box.Color == Color.FromRgb(150, 150, 150) && First)
+
+            if (box.Color == Color.FromRgb(150, 150, 150) && First)
             {
                 box.Color = Color.FromRgb(128, 57, 30);
                 First = false;
+                map[Grid.GetRow(box), Grid.GetColumn(box)] = 0;
             }
             else if (box.Color == Color.FromRgb(150, 150, 150) && !First)
             {
                 box.Color = Color.FromRgb(224, 123, 57);
                 First = true;
+                map[Grid.GetRow(box), Grid.GetColumn(box)] = 1;
             }
             else
             {
                 DisplayAlert("Warning!", "The enemy has already cut this field.", "OK");
             }
             WHO();
+            CheckWinner();
         }
         private void WHO()
         {
-            if(First == true)
+            if (First == true)
             {
                 WhoFirst.Text = "Zero move";
             }
@@ -160,8 +165,131 @@ namespace gridApp
             }
         }
 
-        private void Winner()
+        public string Winner()
         {
+            string winner = "";
+
+            // Вертикально слево
+            if (map[0, 0] == 1 && map[1, 0] == 1 && map[2, 0] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[0, 0] == 0 && map[1, 0] == 0 && map[2, 0] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Вертикально центер
+            if (map[0, 1] == 1 && map[1, 1] == 1 && map[2, 1] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[0, 1] == 0 && map[1, 1] == 0 && map[2, 1] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Вертикально справа
+            if (map[0, 2] == 1 && map[1, 2] == 1 && map[2, 2] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[0, 2] == 0 && map[1, 2] == 0 && map[2, 2] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Горизонтально верх
+            if (map[0, 0] == 1 && map[0, 1] == 1 && map[0, 2] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[0, 0] == 0 && map[0, 1] == 0 && map[0, 2] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Горизонтально центер
+            if (map[1, 0] == 1 && map[1, 1] == 1 && map[1, 2] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[1, 0] == 0 && map[1, 1] == 0 && map[1, 2] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Горизонтально низ
+            if (map[2, 0] == 1 && map[2, 1] == 1 && map[2, 2] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[2, 0] == 0 && map[2, 1] == 0 && map[2, 2] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Диагонально с верхнего левого края до нижнего правого края
+            if (map[0, 0] == 1 && map[1, 1] == 1 && map[2, 2] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[0, 0] == 0 && map[1, 1] == 0 && map[2, 2] == 0)
+            {
+                winner = "zero";
+            }
+
+            // Диагонально с верхнего правого края до нижнего левого
+            if (map[2, 0] == 1 && map[1, 1] == 1 && map[0, 2] == 1)
+            {
+                winner = "cross";
+            }
+            else if (map[2, 0] == 0 && map[1, 1] == 0 && map[0, 2] == 0)
+            {
+                winner = "zero";
+            }
+
+            return winner;
+        }
+        public void CheckWinner()
+        {
+            if (Winner() == "cross")
+            {
+                WhoFirst.Text = "Cross Won !";
+                restartCross();
+            }
+            else if (Winner() == "zero")
+            {
+                WhoFirst.Text = "Zero Won !";
+                restartZero();
+            }
+        }
+        private async void restartCross()
+        {
+            string Restart = await DisplayPromptAsync("Restart", "Cross Won! Do you want to play again? Yes - 1, No - 2",
+                initialValue: "1",
+                maxLength: 1,
+                keyboard: Keyboard.Numeric);
+            if (Restart == "1")
+            {
+                First_playerRND();
+                NewGame();
+                WHO();
+            }
+            
+        }
+        private async void restartZero()
+        {
+            string Restart = await DisplayPromptAsync("Restart", "Zero Won! Do you want to play again? Yes - 1, No - 2",
+                initialValue: "1",
+                maxLength: 1,
+                keyboard: Keyboard.Numeric);
+            if (Restart == "1")
+            {
+                First_playerRND();
+                NewGame();
+                WHO();
+            }
 
         }
     }
